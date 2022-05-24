@@ -62,6 +62,10 @@ border: 10px solid rgb(22, 219, 0);
      src: url('../assets/Sevastopol-Interface.ttf') format('truetype');
      font-family: "Sevastopol"
 }
+@font-face {
+     src: url('../assets/PumpOpti-DemiBold.otf') format('opentype');
+     font-family: "Pump Demi"
+}
 
 
 /******************************************
@@ -72,7 +76,8 @@ html {
      font-size: 62.5%;
      font-family: sans-serif;
      /* background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../milkyway-bg.jpg'); */
-     background: linear-gradient(to top left,rgb(88, 88, 88), rgb(207, 207, 207));
+     /* background: linear-gradient(to top left,rgb(88, 88, 88), rgb(207, 207, 207)); */
+     background: url('../assets/station-screen-graphic.jpg');
      background-size: cover;
      background-repeat: no-repeat;
      color: rgb(255, 255, 255);
@@ -93,17 +98,14 @@ body {
 }
 
 
-h2 {
-     font-size: 4rem;
-     padding: 1.5rem;
-}
+
 
 
 
 .container {
      display: flex;
      flex-flow: row nowrap;
-     height: 90vh;
+     height: 95vh;
      align-items: center;
 }
 
@@ -134,13 +136,21 @@ header {
 
 h2 {
      /* border: 2px solid darkgoldenrod; */
-     background: darkorange;
-     font-family: "City Light", monospace;
+     /* background: darkorange; */
+     background: radial-gradient(rgb(0, 46, 4),rgb(0, 0, 0));
+     /* font-family: "City Light", monospace; */
+     font-size: 4rem;
+     padding: 1.5rem;
+     font-family: "Pump Demi", monospace;
      border-left: 5px solid rgb(20, 20, 20);
      border-top: 5px solid rgb(12, 12, 12);
      border-right: 5px solid rgb(24, 24, 24);
      border-bottom: 5px solid rgb(41,41,41);
      text-align: center;
+     color: yellowgreen;
+
+
+
 }
 
 
@@ -205,7 +215,47 @@ h2 {
      width: 50%;
 }
 
-.dateInputBox,
+
+/* // --------- DATE INPUT ------- */
+.dateInputBox {
+     height: 100%;
+     padding: 1rem;
+     width: 100%;
+     display: flex;
+     flex-flow: column nowrap;
+     align-items: center;
+}
+/* BUTTONS */
+.buttons, .dateInputs {
+     display:flex;
+     flex-flow: row nowrap;
+     justify-content: space-evenly;
+     /* width: 100%; */
+}
+.buttons > *,
+.dateInputs > * {
+     flex: 1;
+}
+
+.button {
+     width: 3rem;
+     height: 3rem;
+     border: 3px outset white;
+     background: yellowgreen;
+     border-radius: 50%;
+     margin: 1%;
+}
+
+/* DATE INPUT DISPLAY */
+.dateInput {
+     width: 3rem;
+     height: 3rem;
+     background: radial-gradient(rgb(0, 46, 4),rgb(0, 0, 0)); 
+}
+
+
+
+/* // ----------- SUBMIT BUTTON ------------ */
 .submitBtnBox {
      height: 100%;
      padding: 1rem;
@@ -222,8 +272,10 @@ h2 {
      border-left: 15px solid rgb(24, 24, 24);
      border-top: 10px solid rgb(41,41,41);
      background: yellow;
+     background: rgb(141, 0, 0);
      border-radius: 5px;
      color: black;
+     color: rgb(235, 235, 235);
      text-shadow: none;
      height: 100%;
      transform: translateY(-5px);
@@ -231,6 +283,7 @@ h2 {
      font-size: 4rem;
      cursor: pointer;
      transition: transform .2s, box-shadow .2s;
+     font-family: 'Pump Demi',monospace;
 }
 
 .submitBtnBox:hover {
@@ -244,6 +297,8 @@ h2 {
      box-shadow: -0px 8px rgb(0, 0, 0), 0 8px black;
      transition: .2s;
      cursor: pointer;
+     text-shadow: 0 0 5px white;
+     background: rgb(206, 0, 0);
 }
 
 .submitBtnBox:active > #submit,
@@ -254,26 +309,6 @@ h2 {
      transition: transform 0s, box-shadow 0s;
 }
 
-.controlsLeft,
-.controlsRight {
-     width: 50%;
-}
-
-.controlsLeft {
-     display: flex;
-     flex-flow: row wrap;
-     justify-content: center;
-}
-
-.button {
-     width: 23%;
-     aspect-ratio: 1/1;
-     height: 50%;
-     border: 5px outset white;
-     background: yellowgreen;
-     border-radius: 50%;
-     margin: 1%;
-}
 
 /*! ---------------- IMAGE DISPLAY -----------------*/
 

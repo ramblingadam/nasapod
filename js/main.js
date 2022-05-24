@@ -11,7 +11,16 @@
 
 
 dateInput = document.querySelector('#dateInput')
-btn = document.querySelector('#submit')
+
+// // ---- Date Adjustment Buttons ----
+monthUp = document.querySelector('#monthUp')
+monthDown = document.querySelector('#monthDown')
+dayUp = document.querySelector('#dayUp')
+dayDown = document.querySelector('#dayDown')
+yearUp = document.querySelector('#yearUp')
+yearDown = document.querySelector('#yearDown')
+
+submit = document.querySelector('#submit')
 description = document.querySelector('#description')
 
 image = document.querySelector('#image')
@@ -19,7 +28,7 @@ video = document.querySelector('#video')
 
 
 
-btn.addEventListener('click', function() {getApod()})
+submit.addEventListener('click', function() {getApod()})
 
 // getApod()
 
@@ -83,19 +92,3 @@ function displayMedia(data) {
         image.src = data.url
     }
 }
-// function displayMedia(data) {
-//     description.innerText = data.explanation
-//     if(data['media_type'] === 'video') {
-//         console.log('issa video')
-//         image.src = ''
-//         image.style.display = 'none'
-//         video.style.display = 'unset'
-//         video.src = data.url
-//     } else {
-//         video.src = ''
-
-//         video.style.display = 'none'
-//         image.style.display = 'unset'
-//         image.src = data.url
-//     }
-// }
