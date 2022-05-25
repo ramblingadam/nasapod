@@ -22,6 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"> 
 </head>
 <body>
+	<!-- <audio src="assets/space-chillout-14194.mp3" autoplay></audio> -->
 	<div class="container">
 	
 		<div class="left">
@@ -31,30 +32,32 @@
 
 			<div class="descriptionMonitor">
 				<div class="descriptionWindow">
-					<p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquam numquam, fuga sit, officiis eius ipsa mollitia neque optio officia nihil consequatur dignissimos modi vel? Dolores totam modi esse molestiae suscipit hic vero. Temporibus aliquam aut sint corporis consequatur quidem veritatis earum cum dignissimos assumenda non delectus illo voluptatibus, dolor rem, perferendis similique enim magni reprehenderit rerum! Aut mollitia dolor voluptate minus ducimus dolorum debitis doloremque? Expedita, sed nobis. Totam incidunt veniam reprehenderit ab repellendus labore voluptas repudiandae, repellat autem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquam numquam, fuga sit, officiis eius ipsa mollitia neque optio officia nihil consequatur dignissimos modi vel? Dolores totam modi esse molestiae suscipit hic vero. Temporibus aliquam aut sint corporis consequatur quidem veritatis earum cum dignissimos assumenda non delectus illo voluptatibus, dolor rem, perferendis similique enim magni reprehenderit rerum! Aut mollitia dolor voluptate minus ducimus dolorum debitis doloremque? Expedita, sed nobis. Totam incidunt veniam reprehenderit ab repellendus labore voluptas repudiandae, repellat autem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio aliquam numquam, fuga sit, officiis eius ipsa mollitia neque optio officia nihil consequatur dignissimos modi vel? Dolores totam modi esse molestiae suscipit hic vero. Temporibus aliquam aut sint corporis consequatur quidem veritatis earum cum dignissimos assumenda non delectus illo voluptatibus, dolor rem, perferendis similique enim magni reprehenderit rerum! Aut mollitia dolor voluptate minus ducimus dolorum debitis doloremque? Expedita, sed nobis. Totam incidunt veniam reprehenderit ab repellendus labore voluptas repudiandae, repellat autem?</p>
+					<p id="description">Loading...</p>
 				</div>
 			</div>
 			<div class="controls">
 				<div class="dateInputBox">
-					<div class="buttons">
-						<div class="button" id="monthUp"></div>
-						<div class="button" id="dayUp"></div>
-						<div class="button" id="yearUp"></div>
-					</div>
-					<div class="dateInputs">
+					<div class="dateBox monthBox">
+						<div class="button" id="monthUp"><i class="fa-solid fa-chevron-up"></i></div>
 						<div class="dateInput" id="month">MM
 						</div>
-						<div class="dateInput" id="day">DD
+						<div class="button" id="monthDown"><i class="fa-solid fa-chevron-down"></i></div>
+					</div>
+					<div class="dateBox dayBox">
+						<div class="button" id="dayUp"><i class="fa-solid fa-chevron-up"></i></div>
+						<div class="dateInput" id="day">MM
 						</div>
-						<div class="dateInput" id="year">YYYY
+						<div class="button" id="dayDown"><i class="fa-solid fa-chevron-down"></i></div>
+					</div>
+					<div class="dateBox yearBox">
+						<div class="button" id="yearUp"><i class="fa-solid fa-chevron-up"></i></div>
+						<div class="dateInput" id="year">MM
 						</div>
+						<div class="button" id="yearDown"><i class="fa-solid fa-chevron-down"></i></div>
+					</div>
+
+
 					<!-- <input type="date" id="dateInput"> -->
-					</div>
-					<div class="buttons">
-						<div class="button" id="monthDown"></div>
-						<div class="button" id="dayDown"></div>
-						<div class="button" id="yearDown"></div>
-					</div>
 				</div>
 				<div class="submitBtnBox">
 				<span id="submit">SUBMIT</span>
