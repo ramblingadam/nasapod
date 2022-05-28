@@ -28,21 +28,23 @@
 /*******************************************/
 /* SCROLLBARS */
 /* Firefox */
-* {
+.descriptionWindow {
      scrollbar-width: thin;
      scrollbar-color: rgb(0, 104, 52) rgb(22, 219, 0);
 }
 
+
+
 /* Chrome, Edge, Safari */
-*::-webkit-scrollbar {
+.descriptionWindow::-webkit-scrollbar {
 width: 15px;
 }
 
-*::-webkit-scrollbar-track {
+.descriptionWindow::-webkit-scrollbar-track {
 background: rgb(0, 104, 52);
 }
 
-*::-webkit-scrollbar-thumb {
+.descriptionWindow::-webkit-scrollbar-thumb {
 background-color: rgb(13, 134, 0);
 border-radius: 1px;
 border: 10px solid rgb(22, 219, 0);
@@ -79,13 +81,11 @@ border: 10px solid rgb(22, 219, 0);
 html {
      font-size: 62.5%;
      font-family: sans-serif;
-     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../milkyway-bg.jpg');
+     /* background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../milkyway-bg.jpg'); */
      /* background: linear-gradient(to top left,rgb(88, 88, 88), rgb(207, 207, 207)); */
-     /* background: url('../assets/station-screen-graphic.jpg'); */
+     background: url('../assets/station-screen-graphic.jpg');
      background-size: cover;
      background-repeat: no-repeat;
-     color: rgb(255, 255, 255);
-     height: 100vh;
 }
 
 
@@ -96,135 +96,118 @@ html {
 /* LAYOUT
 /*******************************************/
 body {
-     padding: 2vh;
-     /* text-align: center; */
-     /* text-shadow: -2px 2px 5px black; */
+     padding: 1rem;
 }
 
 .container {
      display: flex;
-     flex-flow: row nowrap;
-     height: 95vh;
+     flex-flow: column nowrap;
+     justify-content: flex-start;
      align-items: center;
 }
 
 .left,
 .right {
-     width: 50%;
-     height: 98vh;
-     min-height: 690px;
+     width: 100%;
 }
 
+/* ! -----------------LEFT SECTION - TEXT + BUTTONS --------------*/
 .left {
-     max-width: 1500px;
-}
-
-/* ! ----------- HEADER / DESCRIPTION / CONTROLS --------------- */
-.left {
-     margin-right: 2%;
      display: flex;
      flex-flow: column nowrap;
      align-items: center;
-     justify-content: space-evenly;
 }
 
+/* // HEADER - "NASA PICTURE OF THE DAY" */
 header {
-     /* height: 6rem; */
+     width: 100%;
+
+     border: 3px solid black;
+     border-radius: 5px;
+     transform: perspective(300px) rotateX(-25deg);
+
 }
 
-h2 {
-     /* border: 2px solid darkgoldenrod; */
-     /* background: darkorange; */
-     background: radial-gradient(rgb(0, 46, 4),rgb(0, 0, 0));
-     /* font-family: "City Light", monospace; */
-     font-size: 4rem;
-     padding: 1.5rem;
+header h2 {
+     padding: .5rem;
+
+     font-size: 2.2rem;
      font-family: "Pump Demi", monospace;
+     color: lime;
+     text-align: center;
+
+     background: radial-gradient(rgb(0, 46, 4),rgb(0, 0, 0));
+
      border-left: 5px solid rgb(20, 20, 20);
      border-top: 5px solid rgb(12, 12, 12);
      border-right: 5px solid rgb(24, 24, 24);
      border-bottom: 5px solid rgb(41,41,41);
-     text-align: center;
-     color: lime;
+
 }
 
-
-
-
+/* // DESCRIPTION MONITOR - TEXT */
 .descriptionMonitor {
-     height: 100%;
-     max-height: 60vh;
-     /* margin-bottom: 5%; */
-     border: 5px solid black;
-     border-radius: 5px;
-     background: black;
      width: 95%;
-     margin-top: 2.3rem;
+     max-height: 406px;
+     height: 406px;
+
+     border: 3px solid black;
+     border-radius: 5px;
+ 
 }
 
 .descriptionWindow {
-     height: 100%;
-     border-left: 15px solid rgb(20, 20, 20);
-     border-top: 15px solid rgb(12, 12, 12);
-     border-right: 15px solid rgb(24, 24, 24);
-     border-bottom: 15px solid rgb(41,41,41);
+     max-height: 400px;
+     height: 400px;
+     padding: .5rem;
 
-     font-size: 4.5rem;
+     font-family: 'Sevastopol',monospace;
+     font-size: 3.5rem;
      color: lime;
+
      background: radial-gradient(rgb(0, 46, 4),rgb(0, 0, 0));
-     border-radius: 5px;
-     padding: 1rem;
-     display: flex;
-     align-items: center;
-     /* border: 15px inset;
-     border-image: url(../z_assets/grunge-metal-background.jpg); */
-     /* font-family: 'City Light', monospace; */
-     /* letter-spacing: .3rem; */
 
-     font-family: 'Sevastopol', monospace;
+     border-top: 5px solid rgb(12, 12, 12);
+     border-right: 5px solid rgb(24, 24, 24);
+     border-left: 5px solid rgb(20, 20, 20);
+     border-bottom: 5px solid rgb(41,41,41);
 
-     /* text-shadow: -2px 1px rgba(50, 255, 84, 0.459); */
-
-     /* text-transform: uppercase; */
      overflow-y: scroll;
-     
 }
 
-.descriptionWindow p {
-     text-align: left;
-     max-height: 95%;
-
+.description {
+     overflow-wrap: break-word;
 }
-
-/* ! -------- CONTROLS -------- */
 
 .controls {
-     background: grey;
-     background: linear-gradient(rgba(0,0,0, .7), rgba(95, 95, 95, .7)), url('../z_assets/grunge-metal-background.jpg');
-     height: 15rem;
-     /* border: 5px ridge darkgray; */
-     border: 5px outset;
-     border-image: url(../assets/grunge-metal-background-small.jpg);
+     width: 95%;
+     /* margin-top: .5rem; */
+     padding-top: .5rem;
+
+     background: url('../assets/grunge-metal-background-small.jpg');
+
+     border-top: 5px solid rgb(12, 12, 12);
+     border-right: 5px solid rgb(24, 24, 24);
+     border-left: 5px solid rgb(20, 20, 20);
+     border-bottom: 5px solid rgb(41,41,41);
+
+     transform: perspective(500px) rotateX(15deg);
+
      display: flex;
-     flex-flow: row nowrap;
-     transform: perspective(300px) rotateX(10deg);
-     /* transform-style: preserve-3d; */
+     flex-flow: column nowrap;
 }
 
-.controls > div {
-     width: 50%;
-}
-
-
-/* // --------- DATE INPUT ------- */
-.dateInputBox {
-     height: 100%;
-     padding: 1rem;
+.dateInputBox,
+.submitBtnBox {
      width: 100%;
+}
+
+.dateInputBox {
+
+
      display: flex;
      flex-flow: row nowrap;
      justify-content: center;
-     align-items: center;
 }
 
 .dateBox {
@@ -232,10 +215,9 @@ h2 {
      flex-flow: column nowrap;
      justify-content: center;
      align-items: center;
-     
 }
 
-/* BUTTONS */
+/* // DATE SELECTION BUTTONS */
 .button {
      width: 80%;
      height: 3rem;
@@ -255,34 +237,29 @@ h2 {
      display: flex;
      justify-content: center;
      align-items: center;
+
+     transition: transform .2s, box-shadow .2s;
 }
 
-.button:hover {
-     transform: translateY(-6px);
-     /* transform: translateZ(20px); */
-     box-shadow: -0px 6px rgb(0, 0, 0), 0 6px black;
-     transition: .2s;
-     cursor: pointer;
-     text-shadow: 0 0 5px white;
-     background: rgb(0, 206, 10);
-}
-
-.button:hover i {
-     text-shadow: 0 0 5px;
-}
 
 .button:active {
      transform: translate(0px);
+     background: rgb(0, 206, 10);
      box-shadow: 0px 0px rgb(0, 0, 0);
      transition: transform 0s, box-shadow 0s;
 }
 
+.button:active i {
+     text-shadow: 0 0 5px;
+}
+
 .button i {
-     font-size: 2rem;
+     font-size: 1.5rem;
+     color: white;
      pointer-events: none;
 }
 
-/* DATE INPUT DISPLAY */
+/* // DATE INPUT TEXT */
 .dateInput {
      width: 5.5rem;
      height: 4rem;
@@ -302,22 +279,31 @@ h2 {
 
 
 
-/* // ----------- SUBMIT BUTTON ------------ */
+/* // SUBMIT BUTTON */
+.submitBtnBox {
+     display: flex;
+     justify-content: center;
+}
+
+
 .submitBtnBox {
      height: 100%;
-     padding: 1rem;
+     padding: 1rem 1rem .5rem 1rem;
 }
 
 #submit {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding: 1rem;
+     width: 100%;
+     padding: .5rem;
 
-     border-right: 15px solid rgb(20, 20, 20);
-     border-bottom: 15px solid rgb(12, 12, 12);
-     border-left: 15px solid rgb(24, 24, 24);
-     border-top: 10px solid rgb(41,41,41);
+     font-family: 'Pump Demi',monospace;
+     color: rgb(235, 235, 235);
+
+
+     border-top: 5px solid rgb(41,41,41);
+     border-right: 8px solid rgb(20, 20, 20);
+     border-bottom: 8px solid rgb(12, 12, 12);
+     border-left: 8px solid rgb(24, 24, 24);
+
      /* border: 10px outset; */
      /* border-image: url('../assets/grunge-metal-background-small.jpg'); */
      border-image-repeat: stretch;
@@ -327,35 +313,29 @@ h2 {
      background: yellow;
      background: rgb(141, 0, 0);
      border-radius: 5px;
-     color: black;
-     color: rgb(235, 235, 235);
-     text-shadow: none;
-     height: 100%;
-     transform: translateY(-5px);
+
+
+
      box-shadow: -0px 5px rgb(0, 0, 0), 0 5px black;
      font-size: 4rem;
      cursor: pointer;
+
+     transform: translateY(-5px);
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
      transition: transform .2s, box-shadow .2s;
-     font-family: 'Pump Demi',monospace;
+
 }
 
-.submitBtnBox:hover {
-     cursor: pointer;
-}
 
-.submitBtnBox:hover > #submit,
-#submit:hover {
-     transform: translateY(-8px);
-     /* transform: translateZ(20px); */
-     box-shadow: -0px 8px rgb(0, 0, 0), 0 8px black;
-     transition: .2s;
-     cursor: pointer;
-     text-shadow: 0 0 5px white;
-     background: rgb(206, 0, 0);
-}
 
 .submitBtnBox:active > #submit,
 #submit:active {
+     text-shadow: 0 0 5px white;
+     background: rgb(206, 0, 0);
      transform: translate(0px);
      box-shadow: 0px 0px rgb(0, 0, 0);;
 
@@ -363,9 +343,10 @@ h2 {
 }
 
 
-/*! ---------------- IMAGE DISPLAY -----------------*/
+/*! ---------------- RIGHT SECTION - IMAGE DISPLAY -----------------*/
 
 .imageMonitor {
+     margin-top: .5rem;
      height: 100%;
      border: 5px solid black;
      background: black;
@@ -377,19 +358,19 @@ h2 {
      height: 100%;
      display: flex;
      align-items: center;
-     padding: 1rem;
+     padding: 0rem;
      width: 100%;
      position: relative;
-     border-left: 15px solid rgb(20, 20, 20);
-     border-top: 15px solid rgb(12, 12, 12);
-     border-right: 15px solid rgb(24, 24, 24);
-     border-bottom: 15px solid rgb(41,41,41);
+     border-left: 5px solid rgb(20, 20, 20);
+     border-top: 5px solid rgb(12, 12, 12);
+     border-right: 5px solid rgb(24, 24, 24);
+     border-bottom: 5px solid rgb(41,41,41);
 }
 
 .imageWindow > img {
      min-width: 100%;
      max-height: 100%;
-     border: 1px solid darkgreen;
+     /* border: 1px solid darkgreen; */
      border-radius: 10px;
      
 }
@@ -421,31 +402,34 @@ iframe {
      display: none;
 }
 
-@media all and (max-width: 1080px) {
-     .container {
-          flex-flow: column nowrap;
+/* // Disables hover effects on touch devices */
+@media (hover: hover) {
+     .button:hover {
+          transform: translateY(-6px);
+          /* transform: translateZ(20px); */
+          box-shadow: -0px 6px rgb(0, 0, 0), 0 6px black;
+          transition: .2s;
+          cursor: pointer;
+          text-shadow: 0 0 5px white;
+          background: rgb(0, 206, 10);
      }
-     .left,
-     .right {
-          width: 100%;
+     
+     .button:hover i {
+          text-shadow: 0 0 5px;
      }
-     .left {
-          margin-top: 4rem;
-          margin-bottom: 5rem;
-     }
-     .controls {
-          width: 90%;
-     }
-}
 
-@media all and (max-width: 645px) {
-     .controls {
-          transform: unset;
-          flex-flow: column nowrap;
-          height: unset;
+     .submitBtnBox:hover {
+          cursor: pointer;
      }
-     .left {
-          margin-bottom: 10rem;
+     
+     .submitBtnBox:hover > #submit,
+     #submit:hover {
+          transform: translateY(-8px);
+          /* transform: translateZ(20px); */
+          box-shadow: -0px 8px rgb(0, 0, 0), 0 8px black;
+          transition: .2s;
+          cursor: pointer;
+          text-shadow: 0 0 5px white;
+          background: rgb(206, 0, 0);
      }
-    
 }
