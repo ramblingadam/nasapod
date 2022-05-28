@@ -8,46 +8,55 @@
      box-sizing: border-box;
 }
 
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
-}
-
-.clear {
-	clear: both;
-}
-
-
 /******************************************
 /* COLORS
 /*******************************************/
-/* SCROLLBARS */
-/* Firefox */
-.descriptionWindow {
+/* ! SCROLLBARS */
+/* // Firefox */
+/* WHOLE SITE */
+* {
      scrollbar-width: thin;
      scrollbar-color: rgb(0, 104, 52) rgb(22, 219, 0);
 }
 
+/* DESCRIPTION TEXT */
+.descriptionWindow {
+     scrollbar-width: thin;
+     scrollbar-color:  rgb(22, 219, 0) rgb(0, 104, 52);
+}
 
 
-/* Chrome, Edge, Safari */
+
+/* // Chrome, Edge, Safari */
+/* WHOLE SITE */
+*::-webkit-scrollbar {
+     width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+     background: rgb(0, 104, 52);
+}
+
+*::-webkit-scrollbar-thumb {
+     background-color: rgb(22, 219, 0);
+     border-radius: 5px;
+     /* border: 1px solid rgb(22, 219, 0); */
+}
+
+
+/* DESCRIPTION TEXT */
 .descriptionWindow::-webkit-scrollbar {
-width: 15px;
+     width: 5px;
 }
 
 .descriptionWindow::-webkit-scrollbar-track {
-background: rgb(0, 104, 52);
+     background: rgb(0, 104, 52);
 }
 
 .descriptionWindow::-webkit-scrollbar-thumb {
-background-color: rgb(13, 134, 0);
-border-radius: 1px;
-border: 10px solid rgb(22, 219, 0);
+     background-color: rgb(22, 219, 0);
+     border-radius: 5px;
+     /* border: 0px solid rgb(22, 219, 0); */
 }
 /* END SCROLLBARS */
 
@@ -86,6 +95,8 @@ html {
      background: url('../assets/station-screen-graphic.jpg');
      background-size: cover;
      background-repeat: no-repeat;
+     overflow-x: hidden;
+
 }
 
 
@@ -96,10 +107,13 @@ html {
 /* LAYOUT
 /*******************************************/
 body {
-     padding: 1rem;
+     margin: 0px;
+     min-height: 100vh;
 }
 
 .container {
+     padding: 1rem;
+
      display: flex;
      flex-flow: column nowrap;
      justify-content: flex-start;
@@ -293,6 +307,7 @@ header h2 {
 
 #submit {
      width: 100%;
+     max-width: 400px;
      padding: .5rem;
 
      font-family: 'Pump Demi',monospace;
@@ -402,7 +417,7 @@ iframe {
      display: none;
 }
 
-/* // Disables hover effects on touch devices */
+/* // Enables hover effects on non-touch devices */
 @media (hover: hover) {
      .button:hover {
           transform: translateY(-6px);
@@ -432,4 +447,70 @@ iframe {
           text-shadow: 0 0 5px white;
           background: rgb(206, 0, 0);
      }
+}
+
+
+/* // RESPONSIVE MEDIA QUERIES */
+
+@media all and (min-width: 1000px) {
+     body {
+          height: 100vh;
+     }
+     .container {
+          height: 100%;
+          flex-flow: row nowrap;
+          /* align-items: space-between; */
+
+
+          
+     }
+     body {
+          padding-bottom: 0;
+     }
+     .left,
+     .right {
+          height: 100%;
+     }
+     .left {
+          width: 40%;
+          padding-right: 1rem;
+
+          justify-content: center;
+
+     }
+     .right {
+          width: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+     header {
+          flex-shrink: 1;
+     }
+     header h2 {
+          font-size: 3rem;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+
+     .descriptionMonitor {
+          max-height: unset;
+          flex: 3;
+     }
+
+     .descriptionWindow {
+          max-height: unset;
+          height: 100%;
+     }
+     .controls {
+          flex: 1;
+     }
+
+     .imageMonitor {
+          height: unset;
+          max-width: 100%;
+     }
+
 }
