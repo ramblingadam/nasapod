@@ -92,7 +92,9 @@ html {
      font-family: sans-serif;
      /* background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../milkyway-bg.jpg'); */
      /* background: linear-gradient(to top left,rgb(88, 88, 88), rgb(207, 207, 207)); */
-     background: url('../assets/station-screen-graphic.jpg');
+     /* background: url('../assets/station-screen-graphic.jpg'); */
+     background: url('../assets/milkyway-bg.jpg');
+     /* background: url('../assets/bridge_01.jpg'); */
      background-size: cover;
      background-repeat: no-repeat;
      overflow-x: hidden;
@@ -225,6 +227,7 @@ header h2 {
 }
 
 .dateBox {
+
      display: flex;
      flex-flow: column nowrap;
      justify-content: center;
@@ -278,6 +281,10 @@ header h2 {
      width: 5.5rem;
      height: 4rem;
      background: radial-gradient(rgb(0, 0, 0),rgb(0, 0, 0)); 
+     border-left: 5px solid rgb(36, 36, 36);
+     border-top: 5px solid rgb(41, 41, 41);
+     border-right: 5px solid rgb(58, 58, 58);
+     border-bottom: 5px solid rgb(77, 77, 77);
      display: flex;
      justify-content: center;
      align-items: center;
@@ -362,7 +369,7 @@ header h2 {
 
 .imageMonitor {
      margin-top: .5rem;
-     height: 100%;
+     /* height: 100%;  */
      border: 5px solid black;
      background: black;
      border-radius: 5px;
@@ -373,8 +380,9 @@ header h2 {
      height: 100%;
      display: flex;
      align-items: center;
+     justify-content: center;
      padding: 0rem;
-     width: 100%;
+     /* width: 100%; */
      position: relative;
      border-left: 5px solid rgb(20, 20, 20);
      border-top: 5px solid rgb(12, 12, 12);
@@ -383,7 +391,7 @@ header h2 {
 }
 
 .imageWindow > img {
-     min-width: 100%;
+     max-width: 100%;
      max-height: 100%;
      /* border: 1px solid darkgreen; */
      border-radius: 10px;
@@ -421,7 +429,7 @@ iframe {
 @media (hover: hover) {
      .button:hover {
           transform: translateY(-6px);
-          /* transform: translateZ(20px); */
+         
           box-shadow: -0px 6px rgb(0, 0, 0), 0 6px black;
           transition: .2s;
           cursor: pointer;
@@ -440,12 +448,33 @@ iframe {
      .submitBtnBox:hover > #submit,
      #submit:hover {
           transform: translateY(-8px);
-          /* transform: translateZ(20px); */
           box-shadow: -0px 8px rgb(0, 0, 0), 0 8px black;
           transition: .2s;
           cursor: pointer;
           text-shadow: 0 0 5px white;
           background: rgb(206, 0, 0);
+     }
+
+     .submitBtnBox:active > #submit,
+     #submit:active {
+          text-shadow: 0 0 5px white;
+          background: rgb(206, 0, 0);
+          transform: translate(0px);
+          box-shadow: 0px 0px rgb(0, 0, 0);;
+
+          transition: transform 0s, box-shadow 0s;
+     }
+
+
+     .button:active {
+          transform: translate(0px);
+          background: rgb(0, 206, 10);
+          box-shadow: 0px 0px rgb(0, 0, 0);
+          transition: transform 0s, box-shadow 0s;
+     }
+
+     .button:active i {
+          text-shadow: 0 0 5px;
      }
 }
 
@@ -458,11 +487,7 @@ iframe {
      }
      .container {
           height: 100%;
-          flex-flow: row nowrap;
-          /* align-items: space-between; */
-
-
-          
+          flex-flow: row nowrap;  
      }
      body {
           padding-bottom: 0;
@@ -509,8 +534,42 @@ iframe {
      }
 
      .imageMonitor {
-          height: unset;
-          max-width: 100%;
+          /* height: unset; */
+          /* width: 100%; */
+          /* max-height: 100vh; */
+          /* overflow-y: scroll; */
+     }
+     .imageWindow {
+          width: 100%;
+          /* width: 600px; */
+          /* height: 100%; */
+          /* overflow-y: scroll; */
+        
+     }
+     .imageWindow img {
+          /* max-width: 100%; */
+          max-height: 95vh;
      }
 
+}
+
+@media all and (max-height: 710px) {
+     .descriptionMonitor {
+
+          max-height: 306px;
+          /* height: 306px; */
+          height: fit-content;
+
+      
+     }
+     
+     .descriptionWindow {
+          /* max-height: 300px; */
+          height: 100%;
+          /* height: 300px; */
+     }
+}
+
+.imageMonitorWidth100 {
+     width: 100% !important;
 }
