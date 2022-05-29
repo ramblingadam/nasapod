@@ -24,4 +24,4 @@ A responsive web app with a delightfully themed UI which allows the user to brow
 # Lessons Learned:
 - Be very wary of using absolute-sizing units in a flexible layout.
 - During this project I mastered a CSS technique for implementing flexible iframe-embedded media.
-- On my first run-througt, I wrote the CSS desktop-first, then went to use media queries to adjust it for mobile. This was a mistake. After spending some time failing to properly untangle my dekstop layout to adapt it for mobiles, I scrapped ALL of the CSS and started fresh, coding it mobile first. Expanding the layout with mobile as the base was much less messy than the other way around!
+- On my first run-through, I wrote the CSS desktop-first, then went to use media queries to adjust it for mobile. This was a mistake. After spending some time failing to properly untangle my dekstop layout to adapt it for mobiles, I scrapped ALL of the CSS and started fresh, coding it mobile first. Expanding the layout with mobile as the base was much less messy than the other way around!
