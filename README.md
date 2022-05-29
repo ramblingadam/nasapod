@@ -4,7 +4,7 @@ A responsive web app with a delightfully themed UI which allows the user to brow
 
 ### [**Click here to check it out!**](https://ramblingadam.github.io/nasapod/)
 
-![Screenshot](https://user-images.githubusercontent.com/96756923/170849935-854eba7d-999e-4bb6-bef6-313eca79229b.jpg)
+[![Screenshot](https://user-images.githubusercontent.com/96756923/170849935-854eba7d-999e-4bb6-bef6-313eca79229b.jpg)](https://ramblingadam.github.io/nasapod/)
 
 # How It's Made:
 **Tech used:** HTML, CSS, JavaScript
