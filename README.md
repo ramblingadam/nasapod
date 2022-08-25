@@ -1,7 +1,6 @@
 # The Universe Console
-### Powered by NASA
 
-A responsive web app with a delightfully themed UI which allows the user to browse NASA's Astronomy Photo of the Day archive. Supports both videos and photos.
+A responsive web app with a retro sci-fi themed UI which allows the user to browse a vast library of astronomy photos and videos, along with detailed descriptions of each image to provide context for the wonder. New content available every day. Powered by NASA.
 
 ### [**Click here to check it out!**](https://ramblingadam.github.io/nasapod/)
 
