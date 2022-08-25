@@ -1,4 +1,5 @@
-# NASA Astronomy Photo/Video of the Day
+# The Universe Console
+### Powered by NASA
 
 A responsive web app with a delightfully themed UI which allows the user to browse NASA's Astronomy Photo of the Day archive. Supports both videos and photos.
 
